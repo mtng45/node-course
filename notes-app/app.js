@@ -27,11 +27,19 @@ yargs.command({
 })
 
 // Create remove command
+// コマンドの設定
 yargs.command({
   command: 'remove',
   describe: 'Remive a note',
-  handler: function () {
-    console.log('Removing the note')
+  builder: { // それ自体がオブジェクトであるビルダープロパティをここで指定して、サポートしたいオプションをリストアップできる。
+    title: {
+      describe: 'Note title',
+      demandOption: true, // 必須に設定
+      type: 'string'
+    }
+  },
+  handler: function (argv) {
+    notes.removeNote(argv.title)
   }
 })
 

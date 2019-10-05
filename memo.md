@@ -32,3 +32,7 @@ two second!
 - Node APIs
 - Callback Queue  
   - Event Loop
+
+---
+### reference
+- [Understanding Javascript Function Executions — Call Stack, Event Loop , Tasks & more](https://medium.com/@gaurav.pandvia/understanding-javascript-function-executions-tasks-event-loop-call-stack-more-part-1-5683dea1f5ec)

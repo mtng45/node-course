@@ -7,16 +7,16 @@ if (!address) {
   return console.log('Please provide an address')
 }
 
-geocode(address, (error, geocodeData) => {
+geocode(address, (error, { latitude, longitude, location }) => {
   if (error) {
     return console.log(error)
   }
-  const { latitude, longitude } = geocodeData
+
   forecast(latitude, longitude, (error, forecastData) => {
     if (error) {
       return console.log(error)
     }
-    console.log(geocodeData.location)
+    console.log(location)
     console.log(forecastData)
   })
 })

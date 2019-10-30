@@ -48,21 +48,35 @@ ObjectID idを24バイトの16進文字列表現として返します
 新しいコレクションインスタンスを作成します（内部タイプ、直接インスタンス化しないでください）
 
 #### [find](https://mongodb.github.io/node-mongodb-native/3.3/api/Collection.html#find)
-`find(query, options)` ⇨ { [Cursor](https://mongodb.github.io/node-mongodb-native/3.3/api/Cursor.html) }
+`find(query, options)` ⇨ { [Cursor](https://mongodb.github.io/node-mongodb-native/3.3/api/Cursor.html) }  
 MongoDBの結果を反復処理するために使用できるクエリのカーソルを作成します[]
 
 #### [findOne](https://mongodb.github.io/node-mongodb-native/3.3/api/Collection.html#findOne)
-`findOne(query, options, callback)`
+`findOne(query, options, callback)`  
 クエリに一致する最初のドキュメントを取得します
 
 ### [Cursor](https://mongodb.github.io/node-mongodb-native/3.3/api/Cursor.html)
-`new Cursor()`
+`new Cursor()`  
 新しいCursorインスタンスを作成します（内部タイプ、直接インスタンス化しないでください）
+
 ### [toArray](https://mongodb.github.io/node-mongodb-native/3.3/api/Cursor.html#toArray)
-`toArray(callback)`
+`toArray(callback)`  
 ドキュメントの配列を返します。発信者は、 結果を保存するのに十分なメモリです。配列には部分的なものしか含まれていないことに注意 このカーソルが以前にアクセスされたときの結果。その場合、 cursor.rewind（）を使用して、カーソルをリセットできます。
 
+### [updateOne](https://mongodb.github.io/node-mongodb-native/3.3/api/Collection.html#updateOne)
+`updateOne(filter, update, options, callback)`  
+コレクション内の単一のドキュメントを更新する
 
+**Returns:**  
+Promise if no callback passed
+
+
+### [updateMany](https://mongodb.github.io/node-mongodb-native/3.3/api/Collection.html#updateMany)
+`updateMany(filter, update, options, callback)`  
+Update multiple documents in a collection
+
+**Returns:**  
+Promise if no callback passed
 
 ---
 
@@ -72,6 +86,10 @@ MongoDBの結果を反復処理するために使用できるクエリのカー�
 - Unixエポックからの秒数を表す4バイトの値¥
 - 5バイトのランダム値、および
 - ランダムな値で始まる3バイトのカウンター
+
+### [Update Operators](https://docs.mongodb.com/manual/reference/operator/update/)
+- [`$inc`](https://docs.mongodb.com/manual/reference/operator/update/inc/#up._S_inc): field の value を指定された量だけ増やします。
+- [`$set`](https://docs.mongodb.com/manual/reference/operator/update/set/#up._S_set): document内の field の value を設定します。
 
 
 

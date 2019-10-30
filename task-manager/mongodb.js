@@ -5,10 +5,6 @@ const { MongoClient, ObjectID } = require('mongodb')
 const connectionURL = 'mongodb://127.0.0.1:27017'
 const databaseName = 'task-manager'
 
-const id = new ObjectID()
-console.log(id)
-console.log(id.getTimestamp())
-
 MongoClient.connect(connectionURL, { 
   useNewUrlParser: true, useUnifiedTopology: true
 }, (error, client) => {
@@ -18,47 +14,24 @@ MongoClient.connect(connectionURL, {
 
   const db = client.db(databaseName)
 
-  // db.collection('users').insertOne({
-  //   name: 'MTNG',
-  //   age: 37
-  // }, (error, result) => {
+  // db.collection('users').findOne({ _id: new ObjectID('5db8625ee2cfbc2b4ae841e7') }, (error, user) => {
   //   if (error) {
-  //     return console.log('Unable to insert user')
+  //     return console.log('Unable to fetch')
   //   }
 
-  //   console.log(result.ops)
+  //   console.log(user)
   // })
 
-  // db.collection('users').insertMany([{
-  //   name: 'MTNG',
-  //   age: 37
-  // }, {
-  //   name: 'kenta',
-  //   age: 33
-  // }], (error, result) => {
-  //   if (error) {
-  //     return console.log('Unable to insert user')
-  //   }
-
-  //   console.log(result.ops)
+  // db.collection('users').find({ age: 37 }).toArray((error, users) => {
+  //   console.log(users)
   // })
 
-  // db.collection('tasks').insertMany([
-  //   {
-  //     description: 'Clean the house',
-  //     completed: true
-  //   }, {
-  //     description: 'Renew inspection',
-  //     completed: false
-  //   }, {
-  //     description: 'Pot plants',
-  //     completed: false
-  //   }
-  // ], (error, result) => {
-  //   if (error) {
-  //     return console.log('Unable to insert tasks!')
-  //   }
+  db.collection('tasks').findOne({ _id: new ObjectID('5db85415089d8027b9a688ef')}, (error, task) => {
+    console.log(task)
+  })
 
-  //   console.log(result.ops)
-  // })
+  db.collection('tasks').find({ completed: false }).toArray((error, task) => {
+    console.log(task)
+  })
+
 })

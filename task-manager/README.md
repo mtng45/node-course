@@ -5,6 +5,8 @@
   - [MongoDB Node.JS Driver](https://mongodb.github.io/node-mongodb-native/)  
     - [Node.js MongoDB Driver API](https://mongodb.github.io/node-mongodb-native/3.3/api/)
 
+---
+
 ## [Node.js MongoDB Driver API](https://mongodb.github.io/node-mongodb-native/3.3/api/)
 
 ### [MongoClient](https://mongodb.github.io/node-mongodb-native/3.3/api/MongoClient.html)  
@@ -40,6 +42,29 @@ ObjectID idを24バイトの16進文字列表現として返します
 
 **Returns** :
 24バイトの16進文字列表現
+
+### [Collection](https://mongodb.github.io/node-mongodb-native/3.3/api/Collection.html)
+`new Collection()`  
+新しいコレクションインスタンスを作成します（内部タイプ、直接インスタンス化しないでください）
+
+#### [find](https://mongodb.github.io/node-mongodb-native/3.3/api/Collection.html#find)
+`find(query, options)` ⇨ { [Cursor](https://mongodb.github.io/node-mongodb-native/3.3/api/Cursor.html) }
+MongoDBの結果を反復処理するために使用できるクエリのカーソルを作成します[]
+
+#### [findOne](https://mongodb.github.io/node-mongodb-native/3.3/api/Collection.html#findOne)
+`findOne(query, options, callback)`
+クエリに一致する最初のドキュメントを取得します
+
+### [Cursor](https://mongodb.github.io/node-mongodb-native/3.3/api/Cursor.html)
+`new Cursor()`
+新しいCursorインスタンスを作成します（内部タイプ、直接インスタンス化しないでください）
+### [toArray](https://mongodb.github.io/node-mongodb-native/3.3/api/Cursor.html#toArray)
+`toArray(callback)`
+ドキュメントの配列を返します。発信者は、 結果を保存するのに十分なメモリです。配列には部分的なものしか含まれていないことに注意 このカーソルが以前にアクセスされたときの結果。その場合、 cursor.rewind（）を使用して、カーソルをリセットできます。
+
+
+
+---
 
 ## [mongoDB: Documents](https://docs.mongodb.com/)
 ### [ObjectId](https://docs.mongodb.com/manual/reference/method/ObjectId/)

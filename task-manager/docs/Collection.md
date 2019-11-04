@@ -36,3 +36,9 @@ Update multiple documents in a collection
 **Returns:**  
 Promise if no callback passed
 
+### [deleteOne](https://mongodb.github.io/node-mongodb-native/3.3/api/Collection.html#deleteOne)
+`deleteOne(filter, options, callback)`
+コレクションからドキュメントを削除する
+
+**Returns:**
+Promise if no callback passed

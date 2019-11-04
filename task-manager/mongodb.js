@@ -14,29 +14,22 @@ MongoClient.connect(connectionURL, {
 
   const db = client.db(databaseName)
 
-  // db.collection('users').updateOne({
-  //   _id: new ObjectID('5db843f8cc7c16241616f081')
-  // }, {
-  //   // 更新演算子
-  //   $inc: {
-  //     age: 1
-  //   }
+  // db.collection('users').deleteMany({
+  //   age: 27
   // }).then((result) => {
   //   console.log(result)
   // }).catch((error) => {
   //   console.log(error)
   // })
 
-  db.collection('tasks').updateMany({
-    completed: false
-  }, {
-    $set: {
-      completed: true
-    }
+  db.collection('tasks').deleteOne({
+    description: 'shopping'
   }).then((result) => {
-    console.log(result.modifiedCount)
+    console.log(result)
   }).catch((error) => {
     console.log(error)
   })
+
+
 
 })

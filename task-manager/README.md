@@ -4,6 +4,8 @@
 - [Welcome to the MongoDB Docs](https://docs.mongodb.com/)  
   - [MongoDB Node.JS Driver](https://mongodb.github.io/node-mongodb-native/)  
     - [Node.js MongoDB Driver API](https://mongodb.github.io/node-mongodb-native/3.3/api/)
+- [mongoose](https://mongoosejs.com/):    
+  node.jsのエレガントなmongodbオブジェクトモデリング
 
 ---
 

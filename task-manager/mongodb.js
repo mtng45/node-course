@@ -29,7 +29,4 @@ MongoClient.connect(connectionURL, {
   }).catch((error) => {
     console.log(error)
   })
-
-
-
 })

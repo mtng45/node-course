@@ -32,3 +32,6 @@ Content-Type: application/json
 
 ## tool
 - [Postman](https://www.getpostman.com/)
+
+## docs
+- [HTTP Status Codes](https://httpstatuses.com/)
